@@ -46,6 +46,11 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_serializers (0.10.13)
+      actionpack (>= 4.1, < 7.1)
+      activemodel (>= 4.1, < 7.1)
+      case_transform (>= 0.2)
+      jsonapi-renderer (>= 0.1.1.beta1, < 0.3)
     activejob (7.0.6)
       activesupport (= 7.0.6)
       globalid (>= 0.3.6)
@@ -73,6 +78,8 @@ GEM
     bson_ext (1.5.1)
     builder (3.2.4)
     cancancan (3.5.0)
+    case_transform (0.2)
+      activesupport
     concurrent-ruby (1.2.2)
     crass (1.0.6)
     date (3.3.3)
@@ -95,8 +102,9 @@ GEM
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
-    irb (1.7.2)
+    irb (1.7.3)
       reline (>= 0.3.6)
+    jsonapi-renderer (0.2.2)
     loofah (2.21.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -111,10 +119,13 @@ GEM
     minitest (5.18.1)
     mongo (2.19.0)
       bson (>= 4.14.1, < 5.0.0)
-    mongoid (7.5.3)
+    mongoid (8.1.1)
       activemodel (>= 5.1, < 7.1, != 7.0.0)
-      mongo (>= 2.10.5, < 3.0.0)
+      concurrent-ruby (>= 1.0.5, < 2.0)
+      mongo (>= 2.18.0, < 3.0.0)
       ruby2_keywords (~> 0.0.5)
+    mongoid-locker (2.0.2)
+      mongoid (>= 5.0, < 9)
     msgpack (1.7.1)
     net-imap (0.3.6)
       date
@@ -188,13 +199,14 @@ PLATFORMS
   x64-mingw-ucrt
 
 DEPENDENCIES
+  active_model_serializers
   bootsnap
   bson_ext
   cancancan
   debug
-  devise
   devise_token_auth
   mongoid
+  mongoid-locker
   puma (~> 5.0)
   rails (~> 7.0.6)
   sqlite3 (~> 1.4)

@@ -46,8 +46,9 @@ group :development do
   # gem "spring"
 end
 
+gem "active_model_serializers"
 gem 'mongoid'
+gem 'mongoid-locker'
 gem 'bson_ext'
-gem 'devise'
 gem 'devise_token_auth'
 gem 'cancancan'
